@@ -13,22 +13,20 @@
  * Prints out the name of each item in the given array.
  * @param {Item[]} items - array of items
  */
+// TODO: use `forEach`
 function logNames(items) {
   items.forEach((item) => {
     console.log(item.name);
   });
 }
-// TODO: use `forEach`
-
-
 
 
 /**
  * @param {Item[]} items - array of items
  * @returns {string[]} an array of item names in all uppercase
- */
+ */    // // TODO: use `map`
 function getUppercaseNames(items) {
-    // // TODO: use `map`
+
   const upperCaseNames = items.map((item) => item.name.toUpperCase());
   return upperCaseNames;
 
@@ -65,8 +63,8 @@ function getItemPriceByName(items, name) {
  */
 function getItemsByCategory(items, category) {
    // TODO: use `filter`
-  return items.filter((item) => item.category === category);
-}
+   return items.filter((item) => item.category === category);
+  }
 
 /**
  * @param {Item[]} items - array of items
@@ -74,17 +72,17 @@ function getItemsByCategory(items, category) {
  */
 function countItems(items) {
    // TODO: use `reduce`
-  return items.reduce((total, item) => total + item.quantity, 0);
+   return items.reduce((total, item) => total + item.quantity, 0);
   };
  
 
 /**
  * @param {Item[]} items - array of items
  * @returns {number} the cost of all given items
- */
+ */ // TODO: use `reduce`
 function calculateTotalPrice(items) {
   return items.reduce((total, item) => total + item.price, 0);
-  // TODO: use `reduce`
+ 
 }
 
 // --------------------- DO NOT CHANGE THE CODE BELOW ------------------------ //
@@ -99,6 +97,7 @@ const INVENTORY = [
   { id: 7, name: "cheddar", price: 4.0, category: "dairy", quantity: 63 },
   { id: 8, name: "sourdough", price: 5.5, category: "grains", quantity: 81 },
 ];
+
 
 console.log("Welcome! We carry the following items:");
 logNames(INVENTORY);
@@ -125,3 +124,4 @@ console.log(
 const category = prompt("Enter a category you would like to see:", "fruit");
 console.log(`The items in the ${category} category are:`);
 console.log(getItemsByCategory(INVENTORY, category));
+
